@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kotak Neo Login</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            width: 300px;
+        }
+
+        .logo img {
+            width: 100px;
+            height: auto;
+        }
+
+        .welcome-text {
+            margin: 20px 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .input-container {
+            margin-top: 20px;
+        }
+
+        .input-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .input-container button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .input-container button:hover {
+            background-color: #0056b3;
+        }
+
+        .links {
+            margin-top: 10px;
+        }
+
+        .links a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="https://i.postimg.cc/Sxhm1QgV/download-3.png" alt="Kotak Neo Logo">
+        </div>
+        <div class="welcome-text">Hi BRAJ<br>Welcome back</div>
+        <div class="input-container">
+            <input type="password" id="mpin" placeholder="Enter 6 digit MPIN">
+            <button onclick="validateMpin()">Submit</button>
+        </div>
+        <div class="links">
+            <a href="#">Forgot M-PIN?</a> | <a href="#">Add Account</a>
+        </div>
+        <div id="error-message" style="color: red; margin-top: 10px;"></div>
+    </div>
+
+    <script>
+        function validateMpin() {
+            const mpin = document.getElementById('mpin').value;
+            const errorMessage = document.getElementById('error-message');
+
+            if (mpin === "869500") {
+                // Display message
+                alert("Redirecting to Kotak Neo...");
+
+                // Redirect after 1 second
+                setTimeout(function() {
+                    window.location.href = "https://sarthakvatasa.github.io/Holdings-Kotak-Neo/braj.html";
+                }, 1000);
+            } else {
+                errorMessage.textContent = "Incorrect Mpin entered";
+            }
+        }
+    </script>
+</body>
+</html>
